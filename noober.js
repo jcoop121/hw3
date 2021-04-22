@@ -62,7 +62,24 @@ document.addEventListener('DOMContentLoaded', async function() {
   console.log(`The Passenger's Drop-off Zip is: ${passengerDropoffZip}`)
 
   // Combine all variables, and store that in memory
-  console.log(`Noober X Passenger: ${passengerFirstName} ${passengerLastName} - ${passengerPhoneNumber}. Pick up at ${passengerPickupAddress}, ${passengerPickupCity}, ${passengerPickupState} ${passengerPickupZip}. Dropff-off at ${passengerDropoffAddress}, ${passengerDropoffCity}, ${passengerDropoffState} ${passengerDropoffZip}.`)
+  console.log(`Passenger: ${passengerFirstName} ${passengerLastName} - ${passengerPhoneNumber}. Pick up at ${passengerPickupAddress}, ${passengerPickupCity}, ${passengerPickupState} ${passengerPickupZip}. Dropff-off at ${passengerDropoffAddress}, ${passengerDropoffCity}, ${passengerDropoffState} ${passengerDropoffZip}.`)
+
+  // Figure out which level of service the rider has requested, store it in memory
+  let serviceType = (ride.purpleRequested)
+  console.log(`The Level of Service is: ${serviceType}`)
+
+  // Conditional
+  
+  if (ride.purpleRequested == true) {
+    serviceType = `Noober Purple`
+  } else if (ride.numberOfPassengers > 3) {
+    serviceType = `Noober XL`
+  } 
+  else { 
+    serviceType = `Noober X`
+    }
+
+  console.log(`${serviceType} Passenger: ${passengerFirstName} ${passengerLastName} - ${passengerPhoneNumber}. Pick up at ${passengerPickupAddress}, ${passengerPickupCity}, ${passengerPickupState} ${passengerPickupZip}. Dropff-off at ${passengerDropoffAddress}, ${passengerDropoffCity}, ${passengerDropoffState} ${passengerDropoffZip}.`)
 
 
   // 🔥 YOUR CODE ENDS HERE 🔥
